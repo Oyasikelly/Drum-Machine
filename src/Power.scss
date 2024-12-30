@@ -1,0 +1,58 @@
+.power-switch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  .switch-label {
+    font-size: 1rem;
+    font-weight: bold;
+    position: relative;
+    top: 10px;
+  }
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+
+    input {
+      opacity: 0; /* Hide the checkbox */
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      /* Remove border-radius for a rectangular appearance */
+      transition: background-color 0.4s;
+
+      &:before {
+        position: absolute;
+        content: "";
+        height: 18px;
+        width: 18px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        /* Remove border-radius for rectangular toggle */
+        transition: transform 0.4s;
+      }
+    }
+
+    input:checked + .slider {
+      background-color: #2196f3;
+
+      &:before {
+        transform: translateX(24px);
+      }
+    }
+  }
+}

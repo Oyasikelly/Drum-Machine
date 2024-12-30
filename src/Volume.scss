@@ -1,0 +1,47 @@
+.volume-control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+
+  .volume-label {
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  .custom-slider {
+    position: relative;
+    width: 80%;
+    height: 10px;
+    background-color: #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+
+    .slider-track {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      background-color: #2196f3;
+      border-radius: 5px;
+    }
+
+    .slider-handle {
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 20px;
+      height: 20px;
+      background-color: #fff;
+      border: 2px solid #2196f3;
+      border-radius: 50%;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+
+      &:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+      }
+    }
+  }
+}

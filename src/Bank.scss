@@ -1,0 +1,57 @@
+.bank-switch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+
+  .switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 25px;
+    cursor: pointer;
+
+    input {
+      opacity: 0; /* Hide the checkbox */
+      width: 0;
+      height: 0;
+    }
+
+    .slider {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: background-color 0.4s;
+
+      /* Remove border-radius for rectangular look */
+      &:before {
+        content: "";
+        position: absolute;
+        height: 18px;
+        width: 18px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        transition: transform 0.4s;
+      }
+    }
+
+    input:checked + .slider {
+      background-color: #2196f3;
+
+      &:before {
+        transform: translateX(24px);
+      }
+    }
+  }
+
+  .switch-label {
+    position: relative;
+    top: 10px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
